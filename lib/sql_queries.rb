@@ -22,14 +22,14 @@ end
 def selects_oldest_bear_and_returns_name_and_age 
   # "Write your SQL query here"
   <<-SQL
-    SELECT name, age FROM bears WHERE age IN (SELECT DISTINCT max(age) FROM bears) LIMIT 1;
+    SELECT name, max(age) FROM bears;
   SQL
 end
 
 def select_youngest_bear_and_returns_name_and_age 
   # "Write your SQL query here"
   <<-SQL
-    SELECT name, age FROM bears WHERE age IN (SELECT DISTINCT min(age) FROM bears) LIMIT 1;
+    SELECT name, min(age) FROM bears;
   SQL
 end
 
